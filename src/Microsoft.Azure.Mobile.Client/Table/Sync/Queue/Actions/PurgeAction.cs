@@ -34,7 +34,7 @@ namespace Microsoft.WindowsAzure.MobileServices.Sync
 
         protected async override Task<bool> HandleDirtyTable()
         {
-            if (this.Query.Filter != null || !this.force)
+            if (!this.force)
             {
                 throw new InvalidOperationException("The table cannot be purged because it has pending operations.");
             }
